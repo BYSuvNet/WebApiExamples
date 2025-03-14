@@ -26,4 +26,5 @@ public class Item(string name, string description)
     public int Id { get; } = new Random().Next(1, 100000); // Simulate ID generation
     public string Name { get; } = name;
     public string Description { get; } = description;
+    public DateTime CreatedAt { get; } = DateTime.UtcNow;
 }
