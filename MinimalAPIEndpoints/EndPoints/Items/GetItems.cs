@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using WebAPI.Repositories;
 
 namespace WebAPI.EndPoints;
@@ -11,7 +12,7 @@ public static class GetItems
         public void MapEndpoint(IEndpointRouteBuilder app) =>
             app.MapGet("api/items", Handler);
 
-        public static async Task<IResult> Handler(ItemRepository _repo)
+        public static async Task<IResult> Handler([FromServices]ItemRepository _repo)
         {
             var items = await _repo.GetItemsAsync();
             return Results.Ok(new Response(items));

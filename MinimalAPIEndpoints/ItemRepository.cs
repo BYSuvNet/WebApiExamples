@@ -2,7 +2,7 @@ namespace WebAPI.Repositories;
 
 public class ItemRepository
 {
-    private static List<Item> _items = [];
+    private static List<Item> _items = [new Item("Cool Item", "An extremly cool item.", 1)];
 
     public async Task<Item?> GetItemByIdAsync(int id)
     {
@@ -21,9 +21,9 @@ public class ItemRepository
     }
 }
 
-public class Item(string name, string description)
+public class Item(string name, string description, int? Id = null)
 {
-    public int Id { get; } = new Random().Next(1, 100000); // Simulate ID generation
+    public int Id { get; } = Id ?? new Random().Next(1, 100000); // Simulate ID generation
     public string Name { get; } = name;
     public string Description { get; } = description;
     public DateTime CreatedAt { get; } = DateTime.UtcNow;
