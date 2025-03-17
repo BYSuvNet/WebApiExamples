@@ -4,6 +4,8 @@ Different ways to organize API endpoints in ASP.Net Core Web API projects.
 All projects use a very simple ItemRepository to demonstrate how Dependency Injection works in the different cases.
 All projects use DTOs (Request and Response-classes) to separate the API from the internal data model.
 
+There is a shared requests.http file that can be used to test the endpoints in all projects. Just make sure you don't run several apis at the same time since they all use port 5000.
+
 ## 1. Basic Minimal API
 The simplest way to create a Web API in ASP.Net Core using the minimal API approach. This is a single file with all the endpoints defined in one place. Good if you have a small number of endpoints and want to keep things simple. This is the most basic example of a minimal API, with no additional libraries or frameworks used.
 
