@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using WebAPI.Repositories;
 
 namespace WebAPI.EndPoints;
@@ -12,7 +13,11 @@ public static class PostItem
         public void MapEndpoint(IEndpointRouteBuilder app) =>
             app.MapPost("api/items", Handler);
 
-        public static async Task<IResult> Handler(Request request, ItemRepository _repo)
+        public static async Task<IResult> Handler
+        (
+            [FromBody] Request request, 
+            /*[FromServices]*/ ItemRepository _repo
+        )
         {
             var item = new Item(request.Name, request.Description);
             await _repo.AddItemAsync(item);
@@ -20,3 +25,4 @@ public static class PostItem
         }
     }
 }
+
