@@ -1,0 +1,18 @@
+POST http://localhost:5000/api/items
+Content-Type: application/json
+
+{
+  "name": "Katt-kam",
+  "description": "En kam för att kamma ut tovor i kattens päls.",
+  "price": 25
+}
+
+###
+
+GET http://localhost:5000/api/items
+Accept: application/json
+
+###
+
+GET http://localhost:5000/api/items/24846
+Accept: application/json
