@@ -1,6 +1,24 @@
 @MinimalAPIEndpoints_HostAddress = http://localhost:5138
 
-GET {{MinimalAPIEndpoints_HostAddress}}/weatherforecast/
+###
+
+//MinimalAPIEndpoints/EndPoints/Items/PostItem.cs
+POST {{MinimalAPIEndpoints_HostAddress}}/api/items
+Content-Type: application/json
+
+{
+    "name": "New Item",
+    "description": "This is a test item"
+}
+
+###
+
+//MinimalAPIEndpoints/EndPoints/Items/GetItems.cs
+GET {{MinimalAPIEndpoints_HostAddress}}/api/items
 Accept: application/json
 
 ###
+
+//MinimalAPIEndpoints/EndPoints/Items/GetItemById.cs
+GET {{MinimalAPIEndpoints_HostAddress}}/api/items/1
+Accept: application/json
